@@ -10,13 +10,14 @@ import { userContext } from '../../context/userContext';
 function LandingPage() {
   const [state,dispatch]=useContext(userContext);
   const navigate=useNavigate();
-  const redirectUser=({displayName,email,photoUrl})=>{
+  const redirectUser=({displayName,email,photoURL
+  })=>{
     dispatch({
       type:"LOGIN",
       payload:{
         displayName,
         email,
-        photoUrl,
+        photoURL,
       }
     })
     if(true){
@@ -33,8 +34,10 @@ function LandingPage() {
   .then((result) => {
     console.log(result);
     const user=result.user;
-    const {displayName,email,photoUrl}=user;
-    redirectUser({displayName,email,photoUrl})
+    const {displayName,email,photoURL
+    }=user;
+    redirectUser({displayName,email,photoURL
+    })
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
